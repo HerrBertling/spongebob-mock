@@ -19,7 +19,7 @@
           {{ spongedSentence }}
         </textarea>
       </label>
-      <p class="text-pink-500">Einfach auf's graue Feld tippen um den Text in die Zwischenablage zu legen.</p>
+      <p class="text-pink-500">Einfach auf's pinke Feld tippen um den Text in die Zwischenablage zu legen.</p>
     </div>
   </main>
 </template>
