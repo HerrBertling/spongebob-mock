@@ -1,6 +1,6 @@
 <template>
-  <main class="main max-w-xl m-auto py-4 px-3">
-    <h1 class="text-gray-800 text-5xl mb-4 font-bold text-pink-500 mb-12">Spongebobify!</h1>
+  <main class="main max-w-xl m-auto pt-24 md:pt-4 pb-4 px-3">
+    <h1 class="text-5xl mb-4 font-bold text-pink-500 mb-12">Spongebobify!</h1>
     <form class="grid grid-cols-1 gap-4 mb-12" @submit.prevent="spongify">
       <label>
         <span class="font-bold block text-lg text-gray-800">Dein Text</span>
@@ -14,8 +14,8 @@
     </form>
     <div v-if="spongedSentence" @click="copy">
       <label>
-        <strong class="block text-blue-800 font-bold text-4xl mb-4">Happy trolling:</strong>
-        <textarea class="h-48 bg-pink-500 rounded-md p-4 text-xl w-full block focus:outline-none mb-4" ref="copyText">
+        <strong class="block text-pink-500 font-bold text-4xl mb-4">Happy trolling:</strong>
+        <textarea class="h-48 bg-pink-400 rounded-md p-4 text-xl w-full block focus:outline-none mb-4" ref="copyText">
           {{ spongedSentence }}
         </textarea>
       </label>
@@ -68,7 +68,6 @@ export default {
 
 <style scoped>
 .main {
-  background: #fff56c;
   min-height: 100vh;
 }
 .button {

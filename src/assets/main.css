@@ -2,6 +2,14 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+body {
+    background-color: rgb(255, 234, 11);
+    background-image: url('./sponge-bg.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 40vw;
+}
+
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
 }
