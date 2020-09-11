@@ -1,15 +1,84 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <main class="main max-w-xl m-auto py-4 px-3">
+    <h1 class="text-gray-800 text-5xl mb-4 font-bold text-pink-500 mb-12">Spongebobify!</h1>
+    <form class="grid grid-cols-1 gap-4 mb-12" @submit.prevent="spongify">
+      <label>
+        <span class="font-bold block text-lg text-gray-800">Dein Text</span>
+        <input v-model="sentence" placeholder="ScHrEiB wAs…" class="border rounded-sm border-gray-400 hover:border-blue-500 focus:border-blue-500 outline-none px-4 py-3 block w-full" />
+      </label>
+      <div>
+        <button type="submit" class="button text-white px-4 py-2 rounded-md text-lg">
+          Einmal spongeboben, bitte!
+        </button>
+      </div>
+    </form>
+    <div v-if="spongedSentence" @click="copy">
+      <label>
+        <strong class="block text-blue-800 font-bold text-4xl mb-4">Happy trolling:</strong>
+        <textarea class="h-48 bg-pink-500 rounded-md p-4 text-xl w-full block focus:outline-none mb-4" ref="copyText">
+          {{ spongedSentence }}
+        </textarea>
+      </label>
+      <p class="text-pink-500">Einfach auf's graue Feld tippen um den Text in die Zwischenablage zu legen.</p>
+    </div>
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+
+  data() {
+    return {
+      sentence: '',
+      previousLetter: null,
+      case: 'uppercase',
+      spongedSentence: ''
+    }
+  },
+
+  methods: {
+    isLetter(letter) {
+      const regex = new RegExp('[a-zA-Z]')
+      return regex.test(letter)
+    },
+
+    spongify() {
+      this.spongedSentence = this.sentence.split('').map((letter) => {
+        if (!this.isLetter(letter)) {
+          return letter
+        }
+        if (this.case === 'uppercase') {
+          this.case = 'lowercase'
+          return letter.toUpperCase()
+        }
+        this.case = 'uppercase'
+        return letter.toLowerCase()
+      }).join('')
+      this.case = 'uppercase'
+    },
+
+    copy() {
+      this.$refs.copyText.select()
+      document.execCommand("copy");
+    }
   }
 }
 </script>
+
+<style scoped>
+.main {
+  background: #fff56c;
+  min-height: 100vh;
+}
+.button {
+  background-color: #26B9C8;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  background-color: #0457A0;
+}
+
+</style>
