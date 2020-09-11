@@ -1,7 +1,7 @@
 <template>
   <div>
     <main class="main max-w-xl m-auto pt-24 md:pt-4 pb-4 px-3">
-      <h1 class="text-5xl mb-4 font-bold text-pink-500 mb-12">Spongebobify!</h1>
+      <h1 class="text-5xl mb-4 font-bold text-pink-500 mb-12">SpOnGeBoBiFy!</h1>
       <form class="grid grid-cols-1 gap-4 mb-12" @submit.prevent="spongify">
         <label>
           <span class="font-bold block text-lg text-gray-800">Dein Text</span>
