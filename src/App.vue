@@ -30,7 +30,7 @@
             <a class="text-pink-400 text-sm" href="https://github.com/HerrBertling/spongebob-mock">Github</a>
           </li>
           <li>
-            <a class="text-pink-400 text-sm" href="https://digitalisiering.de">Wer hatte denn diese bekloptte Idee?</a>
+            <a class="text-pink-400 text-sm" href="http://digitalisiering.de/">Wer hatte denn diese bekloptte Idee?</a>
           </li>
         </ul>
       </nav>
