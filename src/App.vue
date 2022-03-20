@@ -16,7 +16,7 @@
       <div v-if="spongedSentence" @click="copy">
         <label>
           <strong class="block text-pink-500 font-bold text-4xl mb-4">Happy trolling:</strong>
-          <textarea class="h-48 bg-pink-300 rounded-md p-4 text-xl w-full block focus:outline-none mb-4 text-pink-900" ref="copyText">{{ spongedSentence }}</textarea>
+          <textarea class="h-48 bg-pink-300 rounded-md p-4 text-xl w-full block focus:outline-none mb-4 text-pink-900" ref="copyText" readonly>{{ spongedSentence }}</textarea>
         </label>
         <p class="text-pink-400">Just click the pink field to copy the text to your clipboard.</p>
       </div>
@@ -71,8 +71,8 @@ export default {
     },
 
     copy() {
-      const text = this.$refs.copyText.select()
-      navigator.clipboard.writeText(text);
+      this.$refs.copyText.select();
+      document.execCommand('copy');
     }
   }
 }
